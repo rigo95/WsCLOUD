@@ -1,0 +1,66 @@
+package demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class JpaJuegoApplication {
+
+	ApplicationContext context = SpringApplication.run(JpaJuegoApplication.class, args);
+
+	DaoVideojuego daoVideojuego = context.getBean("daoVideojuego", DaoVideojuego.class);
+
+
+	Videojuego v1 = new Videojuego();
+	v1.setNombre("GTA V");
+	v1.setCompañia("Rockstar Games");
+	v1.setPrecio(43);
+	daoVideojuego.save(v1);
+
+	Videojuego v2 = new Videojuego();
+	v2.setNombre("FIFA 2021");
+	v2.setCompañia("Electronic Arts");
+	v2.setPrecio(33);
+	daoVideojuego.save(v2);
+
+	Videojuego v3 = new Videojuego();
+	v3.setNombre("Spiderman");
+	v3.setCompañia("Insomniac Games");
+	v3.setPrecio(45);
+	daoVideojuego.save(v3);
+
+	
+	System.out.println("\nLISTA DE VIDEOJUEGOS");
+	List<Videojuego> listaVideojuegos = daoVideojuego.findAll();
+	for (Videojuego videojuego : listaVideojuegos) {
+		System.out.println(videojuego);
+	}
+
+	Videojuego v = new Videojuego();
+	v.setId(1);
+	v.setNombre("Batman: Arkham Knight");
+	v.setCompañia("Rocksteady Studios");
+	v.setPrecio(23);
+	daoVideojuego.save(v);
+
+
+	System.out.println("\nLISTA DE VIDEOJUEGOS (MODIFICADO VIDEOJUEGO 1)");
+	List<Videojuego> listaModif = daoVideojuego.findAll();
+	for (Videojuego videojuego : listaModif) {
+		System.out.println(videojuego);
+	}
+
+	
+	daoVideojuego.deleteById(3);
+
+
+	System.out.println("\nLISTA DE VIDEOJUEGOS (ELIMINADO VIDEOJUEGO 3)");
+	List<Videojuego> listaDelete = daoVideojuego.findAll();
+	for (Videojuego videojuego : listaDelete) {
+		System.out.println(videojuego);
+	}
+
+}
+
+}

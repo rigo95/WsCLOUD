@@ -1,0 +1,5 @@
+package demo.modelo.persistencia;
+
+public interface DaoJuego {
+
+}

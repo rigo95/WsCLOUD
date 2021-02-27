@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>+*+*+*+*+*+*</title>
+</head>
+<body>
+<h1>--------------JUEGOS--------------</h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Compañia</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="valor: ${lista_juegos}">
+                    <td th:text="${valor.nombre}"></td>
+                    <td th:text="${valor.compania}"></td>
+                    <td th:text="${valor.precio}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <form action="consultarJuegoId" method="get">
+        <input type="text" name="id_juego" placeholder="Id juego">
+        <input type="submit" value="Acceder">
+    </form>
+
+</body>
+</html>

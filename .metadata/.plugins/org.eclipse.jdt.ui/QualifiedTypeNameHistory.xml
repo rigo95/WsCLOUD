@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="demo.modelo.entidad.Cliente"/>
+    <fullyQualifiedTypeName name="demo.modelo.entidad.Pedido"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+    <fullyQualifiedTypeName name="entidad.Email"/>
+    <fullyQualifiedTypeName name="entidad.Libro"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.ImportResource"/>
+    <fullyQualifiedTypeName name="entidad.Nomina"/>
+    <fullyQualifiedTypeName name="entidad.Jugador"/>
+    <fullyQualifiedTypeName name="entidad.Equipo"/>
+    <fullyQualifiedTypeName name="demo.Ejercicio1Application"/>
+    <fullyQualifiedTypeName name="entidad.Empleado"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="demo.modelo.persistencia.DaoCoche"/>
+    <fullyQualifiedTypeName name="demo.modelo.entidad.Coche"/>
+    <fullyQualifiedTypeName name="entidadse.Direccion"/>
+    <fullyQualifiedTypeName name="antlr.collections.List"/>
+    <fullyQualifiedTypeName name="demo.modelo.persistencia.DaoJuego"/>
+    <fullyQualifiedTypeName name="demo.modelo.entidad.Juego"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.mvc.negocio.GestorUsuario"/>
+    <fullyQualifiedTypeName name="com.mvc.negocio.GestorJuego"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+    <fullyQualifiedTypeName name="com.mvc.persistencia.DaoJuego"/>
+    <fullyQualifiedTypeName name="com.mvc.persistencia.DaoUsuario"/>
+    <fullyQualifiedTypeName name="com.mvc.entidad.Usuario"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.mvc.entidad.Juego"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,5 @@
+package com.mvc.negocio;
+
+public class GestorJuego {
+
+}

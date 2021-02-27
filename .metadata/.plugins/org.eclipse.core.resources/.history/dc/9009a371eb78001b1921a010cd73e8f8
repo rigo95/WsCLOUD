@@ -1,0 +1,5 @@
+package demo.modelo.entidad;
+
+public class Juego {
+
+}

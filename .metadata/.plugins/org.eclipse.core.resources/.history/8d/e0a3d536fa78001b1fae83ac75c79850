@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>******MVC******</title>
+</head>
+<body>
+
+	<h1>MVC de juegos</h1>
+
+	<h2>----------</h2>
+	<p><span th:text="${juego} ? ${juego} : 'Este juego no existe'"></span></p>
+	
+	<form action="devolver_list" method="get">
+		<input type="submit" value="Devolver">
+	</form>
+</body>
+</html>

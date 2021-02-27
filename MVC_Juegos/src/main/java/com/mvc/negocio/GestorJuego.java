@@ -1,0 +1,33 @@
+package com.mvc.negocio;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mvc.entidad.Juego;
+import com.mvc.persistencia.DaoJuego;
+
+@Service
+public class GestorJuego {
+
+	@Autowired
+	private DaoJuego daoJuego;
+
+	public List<Juego> obtenerLista() {
+		return daoJuego.findAll();
+	}
+
+	public Juego buscarJuego(int id) {
+		Optional<Juego> oJuego = daoJuego.findById(id);
+
+		if (oJuego.isPresent()) {
+			return oJuego.get();
+		} else {
+			return null;
+		}
+	}
+
+	
+}

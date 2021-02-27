@@ -1,0 +1,36 @@
+package com.mvc.controlador;
+
+public class Usuario {
+
+	Autowired
+	private GestorUsuario gestorUsuario;
+	
+	@Autowired
+	private GestorVideojuego gestorVideojuego;
+	
+	
+	@PostMapping("doLogin")
+	public String logarse(
+			@RequestParam("nombre_usuario") String nombre,
+			@RequestParam("password") String password,
+			Model model) {
+		
+		Usuario user = new Usuario();
+		user.setNombre(nombre);
+		user.setPassword(password);
+		
+		boolean validado = gestorUsuario.validarUsuario(user);
+		
+		if (validado) {
+			model.addAttribute("nombre_usuario");
+			
+			List<Videojuego> listaVideojuegos = gestorVideojuego.obtenerLista();
+			
+			model.addAttribute("lista_videojuegos", listaVideojuegos);
+			
+			return "inicio";
+		} else {
+			return "errorlogin";
+		}
+	}
+}

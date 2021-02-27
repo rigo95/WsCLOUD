@@ -1,0 +1,51 @@
+package com.mvc.controlador;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.mvc.entidad.Juego;
+import com.mvc.entidad.Usuario;
+import com.mvc.negocio.GestorJuego;
+import com.mvc.negocio.GestorUsuario;
+
+@Controller
+public class ControladorUsuario {
+	
+	@Autowired
+	private GestorUsuario gestorUsuario;
+	
+	@Autowired
+	private GestorJuego gestorJuego;
+	
+	
+	@PostMapping("doLogin")
+	public String logarse(
+			@RequestParam("nombre_usuario") String nombre,
+			@RequestParam("password") String password,
+			Model model) {
+		
+		Usuario user = new Usuario();
+		user.setNombre(nombre);
+		user.setPassword(password);
+		
+		boolean validado = gestorUsuario.validarUsuario(user);
+		
+		if (validado) {
+			model.addAttribute("nombre_usuario");
+			
+			List<Juego> listaJuegos = gestorJuego.obtenerLista();
+			
+			model.addAttribute("lista_juegos", listaJuegos);
+			
+			return "inicio";
+		} else {
+			return "errorlogin";
+		}
+	}
+
+}

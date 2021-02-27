@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="persona1" class="entidades.Persona">
+		<property name="nombre" value="Don felix"></property>
+		<property name="dni" value="2334823v"></property>
+		<property name="telefono" value="7373737"></property>
+		<property name="direccion">
+			<bean class="entidades.Direccion">
+				<property name="tipoVia" value="Calle"></property>
+				<property name="nombreVia" value="europea"></property>
+				<property name="numero" value="32"></property>
+				<property name="cp" value="30890"></property>
+			</bean>
+		</property>
+	</bean>
+
+
+	<bean id="direccion1" class="entidades.Direccion">
+		<property name="tipoVia" value="Calle"></property>
+		<property name="nombreVia" value="la pantomima"></property>
+		<property name="numero" value="666"></property>
+		<property name="cp" value="60606"></property>
+	</bean>
+
+	
+	<bean id="habitacion1" class="entidades.Habitacion">
+		<property name="tipoHabitacion" value="baño"></property>
+		<property name="m2" value="5"></property>
+	</bean>
+
+	<bean id="habitacion2" class="entidades.Habitacion">
+		<property name="tipoHabitacion" value="cocina"></property>
+		<property name="m2" value="12"></property>
+	</bean>
+	
+	<bean id="habitacion3" class="entidades.Habitacion">
+		<property name="tipoHabitacion" value="dormitorio"></property>
+		<property name="m2" value="32"></property>
+	</bean>
+
+	<bean id="listaHabitaciones" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="habitacion1" />
+				<ref bean="habitacion2" />
+				<ref bean="habitacion3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	
+	<bean id="arrendatario1" class="entidades.Persona">
+		<property name="nombre" value="alberto"></property>
+		<property name="dni" value="2324345r"></property>
+		<property name="telefono" value="7463746"></property>
+		<property name="direccion">
+			<bean class="entidades.Direccion">
+				<property name="tipoVia" value="Calle"></property>
+				<property name="nombreVia" value="aprobadisimo"></property>
+				<property name="numero" value="7"></property>
+				<property name="cp" value="77777"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="arrendatario2" class="entidades.Persona">
+		<property name="nombre" value="sofia"></property>
+		<property name="dni" value="746738t"></property>
+		<property name="telefono" value="74763763"></property>
+		<property name="direccion">
+			<bean class="entidades.Direccion">
+				<property name="tipoVia" value="Calle"></property>
+				<property name="nombreVia" value="suspendidisima"></property>
+				<property name="numero" value="6"></property>
+				<property name="cp" value="66666"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="listaArrendatarios" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="arrendatario1" />
+				<ref bean="arrendatario2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!-- CASA -->
+	<bean id="casa1" class="entidades.Casa">
+		<property name="propietario" ref="persona1"></property>
+		<property name="precio" value="89000"></property>
+		<property name="direccion" ref="direccion1"></property>
+		<property name="listaHabitaciones" ref="listaHabitaciones"></property>
+		<property name="listaPersonas" ref="listaArrendatarios"></property>
+	</bean>
+</beans>
+	

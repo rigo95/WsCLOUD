@@ -1,0 +1,25 @@
+package demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import demo.modelo.entidad.Juego;
+import demo.modelo.persistencia.DaoJuego;
+
+@SpringBootApplication
+public class JpaJuegoApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(JpaJuegoApplication.class, args);
+		
+		DaoJuego daoJuego = context.getBean("daoJuego", DaoJuego.class);
+		
+		Juego j1 = new Juego();
+		j1.setNombre("Fallout 4");
+		j1.setCompañia("Bethesda");
+		j1.setPrecio(100);
+		daoJuego.save(j1);
+	}
+
+}

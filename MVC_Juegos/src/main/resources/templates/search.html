@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I---------------</title>
+</head>
+<body>
+	<h2>busqueda</h2>
+	<p><span th:text="${videojuego} ? ${videojuego} : 'El videojuego introducido no existe'"></span></p>
+	
+	<form action="regresar_listado" method="get">
+		<input type="submit" value="Regresar">
+	</form>
+</body>
+</html>
